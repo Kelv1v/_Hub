@@ -74,7 +74,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 
 	local HovxrzGui = Instance.new("ScreenGui")
 	HovxrzGui.Name = "HovxrzGui"
-	HovxrzGui.Parent = game.Players.LocalPlayer.PlayerGui
+	HovxrzGui.Parent = game:GetService("CoreGui")
 	HovxrzGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	local Main = Instance.new("Frame")
@@ -226,7 +226,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 	local ScreenGui = Instance.new("ScreenGui")
 	local ImageButton = Instance.new("ImageButton")
 
-	ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+	ScreenGui.Parent = game:GetService("CoreGui")
 
 	ImageButton.Parent = ScreenGui
 	ImageButton.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
