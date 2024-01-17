@@ -544,7 +544,7 @@ function library:CreateWindow(text,maincolor,text2,logo)
 				TweenService:Create(
 					Frame_2,
 					TweenInfo.new(0.3,Enum.EasingStyle.Quad,Enum.EasingDirection.Out),
-					{Position = UDim2.new(0, 24, 0, 1)}
+					{Position = UDim2.new(0.75999999, 0, 0.5, 0)}
 				):Play()
 				TweenService:Create(
 					Frame,
