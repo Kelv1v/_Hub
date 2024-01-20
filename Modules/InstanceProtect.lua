@@ -1,4 +1,3 @@
--- Made by Iris (https://v3rmillion.net/member.php?action=profile&uid=207161)
 local ProtectedInstances = {};
 local Connections = getconnections or get_connections;
 local HookFunction = HookFunction or hookfunction or hook_function or detour_function;
