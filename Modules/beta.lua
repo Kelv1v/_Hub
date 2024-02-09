@@ -1,8 +1,8 @@
 new = {}
 function FastAttackConnectorFunction()
-	if not _G.Settings or not _G.Settings.MaxCum or not _G.Settings.fuckerurmom then return end 
 	Players = game.Players
 	Client = Players.LocalPlayer
+	if not _G.Settings or not _G.Settings.MaxCum or not _G.Settings.fuckerurmom then Client:Kick('uhuhuhuhuhuhuhuhuhuhuhuhuhuhuhuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuuhuhuhuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuhuhhhuhuhuuhuhuhuhuhuhuuhuh') return end 
 	local Char = Client.Character
 	local Root = Char.HumanoidRootPart
 	wait()
