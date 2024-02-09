@@ -81,7 +81,7 @@ function FastAttackConnectorFunction()
 			a:Stop()
 		end
 	end
-
+	spawn(function()
 	while RunService.Stepped:Wait() do
 		if #canHits > 0 then
 			Controller = Data.activeController
@@ -116,6 +116,7 @@ function FastAttackConnectorFunction()
 			end
 		end
 	end
+		end)
 	return ReturnFunctions
 end
 
