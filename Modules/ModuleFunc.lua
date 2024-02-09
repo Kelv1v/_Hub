@@ -12,7 +12,8 @@ function resetCD(Controller,fucker,RigEvent,TryLag,MaxLag,AttackCD)
   end)
 end
 
-function Func:FAt(Controller,fucker,RigEvent,lastFireValid,TryLag,MaxLag,AttackCD,canHits,Data,NormalClick,Settings,NeedAttacking,Char,Client,DisableFastAttack)
+function Func:FAt(RunService,Controller,fucker,RigEvent,lastFireValid,TryLag,MaxLag,AttackCD,canHits,Data,NormalClick,Settings,NeedAttacking,Char,Client,DisableFastAttack)
+  while RunService.Stepped:Wait() do
   if #canHits > 0 then
     Controller = Data.activeController
     if NormalClick then
@@ -45,5 +46,6 @@ function Func:FAt(Controller,fucker,RigEvent,lastFireValid,TryLag,MaxLag,AttackC
       end
     end
   end
+    end
 end
 return Func
