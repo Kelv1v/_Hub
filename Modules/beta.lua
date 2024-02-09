@@ -1,5 +1,6 @@
 new = {}
 function FastAttackConnectorFunction()
+	if not _G.Settings or not _G.Settings.MaxCum or not _G.Settings.fuckerurmom then return end 
 	Players = game.Players
 	Client = Players.LocalPlayer
 	local Char = Client.Character
@@ -25,8 +26,8 @@ function FastAttackConnectorFunction()
 	local AttackCD = 0
 	local Controller
 	local lastFireValid = 0
-	local MaxLag = 350
-	fucker = 0.07
+	local MaxLag = _G.Settings.MaxCum
+	fucker = _G.Settings.fuckerurmom
 	TryLag = 0
 	
 	--------	Setup	--------
