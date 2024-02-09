@@ -14,14 +14,22 @@ end
 ReturnFunctions={}
 local Data = Combat;local Blank = function() end;local RigEvent = game:GetService("ReplicatedStorage").RigControllerEvent;local Animation = Instance.new("Animation")
 local RecentlyFired = 0;local AttackCD = 0;local Controller;local lastFireValid = 0;local MaxLag = _G.Settings.MaxCum;fucker = _G.Settings.fuckerurmom;TryLag = 0
-function ReturnFunctions:AttackAnimation(k);NoAttackAnimation = k or false;end
-function ReturnFunctions:FastAttack1(k);FastAttack = k or false;end
-function ReturnFunctions:DamageAura1(k);DamageAura = k or nil;end
-function ReturnFunctions:InstantAttack(k);NewFastAttack = k or false;end
-function ReturnFunctions:DisableAttack(k);DisableFastAttack = k or nil;end
-function ReturnFunctions:Attack(k);NeedAttacking = k or false;end
-local resetCD = function();local WeaponName = Controller.currentWeaponModel.Name;local Cooldown = {combat = 0.07};AttackCD = tick() + (fucker and Cooldown[WeaponName:lower()] or fucker or 0.285) + ((TryLag/MaxLag)*0.3)
-RigEvent.FireServer(RigEvent,"weaponChange",WeaponName);TryLag += 1;task.delay((fucker or 0.285) + (TryLag+0.5/MaxLag)*0.3,function();TryLag -= 1;end);end
+function ReturnFunctions:AttackAnimation(k)
+NoAttackAnimation = k or false;end
+function ReturnFunctions:FastAttack1(k)
+FastAttack = k or false;end
+function ReturnFunctions:DamageAura1(k)
+DamageAura = k or nil;end
+function ReturnFunctions:InstantAttack(k)
+NewFastAttack = k or false;end
+function ReturnFunctions:DisableAttack(k)
+DisableFastAttack = k or nil;end
+function ReturnFunctions:Attack(k)
+NeedAttacking = k or false;end
+local resetCD = function()
+local WeaponName = Controller.currentWeaponModel.Name;local Cooldown = {combat = 0.07};AttackCD = tick() + (fucker and Cooldown[WeaponName:lower()] or fucker or 0.285) + ((TryLag/MaxLag)*0.3)
+RigEvent.FireServer(RigEvent,"weaponChange",WeaponName);TryLag += 1;task.delay((fucker or 0.285) + (TryLag+0.5/MaxLag)*0.3,function()
+TryLag -= 1;end);end
 if not shared.orl then shared.orl = RL.wrapAttackAnimationAsync end;if not shared.cpc then shared.cpc = PC.play end;if not shared.dnew then shared.dnew = DMG.new end;if not shared.attack then shared.attack = RigC.attack end
 RL.wrapAttackAnimationAsync = function(a,b,c,d,func)
 if not NoAttackAnimation and not NeedAttacking then
@@ -45,7 +53,8 @@ continue
 end
 if Controller and Controller.equipped and (not Char.Busy.Value or Client.PlayerGui.Main.Dialogue.Visible) and Char.Stun.Value < 1 and Controller.currentWeaponModel then
 if (NeedAttacking or DamageAura) then
-if NewFastAttack and tick() > AttackCD and not DisableFastAttack then;resetCD();end
+if NewFastAttack and tick() > AttackCD and not DisableFastAttack then
+resetCD();end
 if tick() - lastFireValid > 0.5 or not FastAttack then
 Controller.timeToNextAttack = 0
 Controller.hitboxMagnitude = 65
@@ -70,5 +79,4 @@ end
 end)
 return ReturnFunctions
 end
-
 return x2snwz()
