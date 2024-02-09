@@ -1,5 +1,5 @@
 local Func={}
-function Func:resetCD(Controller,fucker,RigEvent,TryLag,MaxLag,AttackCD)
+function resetCD(Controller,fucker,RigEvent,TryLag,MaxLag,AttackCD)
 	local WeaponName = Controller.currentWeaponModel.Name
 	local Cooldown = {
 		combat = 0.07
@@ -12,7 +12,7 @@ function Func:resetCD(Controller,fucker,RigEvent,TryLag,MaxLag,AttackCD)
 	end)
 end
 
---[[function Func:FAt(Controller,fucker,RigEvent,lastFireValid,TryLag,MaxLag,AttackCD,canHits,Data,NormalClick,Settings,NeedAttacking,Char,Client,DisableFastAttack)
+function Func:FAt(Controller,fucker,RigEvent,lastFireValid,TryLag,MaxLag,AttackCD,canHits,Data,NormalClick,Settings,NeedAttacking,Char,Client,DisableFastAttack)
 	if #canHits > 0 then
 		Controller = Data.activeController
 		if NormalClick then
@@ -22,7 +22,7 @@ end
 		if Controller and Controller.equipped and (not Char.Busy.Value or Client.PlayerGui.Main.Dialogue.Visible) and Char.Stun.Value < 1 and Controller.currentWeaponModel then
 			if (NeedAttacking or Settings.DamageAura) then
 				if Settings.NewFastAttack and tick() > AttackCD and not DisableFastAttack then
-					resetCD(Controller,fucker,RigEvent)
+					 resetCD(Controller,fucker,RigEvent,TryLag,MaxLag,AttackCD)
 				end
 				if tick() - lastFireValid > 0.5 or not Settings.FastAttack then
 					Controller.timeToNextAttack = 0
@@ -44,6 +44,6 @@ end
 				end)
 			end
 		end
-	end]]
+	end
 end
 return Func
