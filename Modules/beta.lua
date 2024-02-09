@@ -37,13 +37,13 @@ function FastAttackConnectorFunction()
 		FastAttack = k or false
 	end
 	function ReturnFunctions:DamageAura1(k)
-		DamageAura = k or false
+		DamageAura = k or nil
 	end
 	function ReturnFunctions:InstantAttack(k)
 		NewFastAttack = k or false
 	end
 	function ReturnFunctions:DisableAttack(k)
-		DisableFastAttack = k or false
+		DisableFastAttack = k or nil
 	end
 	function ReturnFunctions:Attack(k)
 		NeedAttacking = k or false
