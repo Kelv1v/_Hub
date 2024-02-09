@@ -1,5 +1,5 @@
 local Func={}
-function resetCD(Controller,fucker,RigEvent,TryLag,MaxLag,AttackCD)
+function Func:resetCD(Controller,fucker,RigEvent,TryLag,MaxLag,AttackCD)
 	local WeaponName = Controller.currentWeaponModel.Name
 	local Cooldown = {
 		combat = 0.07
@@ -12,7 +12,7 @@ function resetCD(Controller,fucker,RigEvent,TryLag,MaxLag,AttackCD)
 	end)
 end
 
-function Func:FAt(Controller,fucker,RigEvent,lastFireValid,TryLag,MaxLag,AttackCD,canHits,Data,NormalClick,Settings,NeedAttacking,Char,Client,DisableFastAttack)
+--[[function Func:FAt(Controller,fucker,RigEvent,lastFireValid,TryLag,MaxLag,AttackCD,canHits,Data,NormalClick,Settings,NeedAttacking,Char,Client,DisableFastAttack)
 	if #canHits > 0 then
 		Controller = Data.activeController
 		if NormalClick then
@@ -44,6 +44,6 @@ function Func:FAt(Controller,fucker,RigEvent,lastFireValid,TryLag,MaxLag,AttackC
 				end)
 			end
 		end
-	end
+	end]]
 end
 return Func
