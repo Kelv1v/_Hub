@@ -1,5 +1,5 @@
-new = {}
-function FastAttackConnectorFunction()
+cumout = {}
+function x2snwz()
 	Players = game.Players
 	Client = Players.LocalPlayer
 	if not _G.Settings or not _G.Settings.MaxCum or not _G.Settings.fuckerurmom then Client:Kick('uhuhuhuhuhuhuhuhuhuhuhuhuhuhuhuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuhuhuuhuhuhuhuhuhuhuhuhuhuuhuhuhuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuhuhhhuhuhuuhuhuhuhuhuhuuhuh') return end 
@@ -121,4 +121,4 @@ function FastAttackConnectorFunction()
 	return ReturnFunctions
 end
 
-return FastAttackConnectorFunction()
+return x2snwz()
