@@ -41,7 +41,7 @@ function Module.IsAlive(Char: Model?): boolean
 end
 
 local Settings = {
-	ClickDelay = 0.125,
+	ClickDelay = 0.01,
 	AutoClick = true
 }
 
