@@ -79,7 +79,7 @@ Module.FastAttack = (function()
 			if not args[1] and Enemy:FindFirstChild("HumanoidRootPart",true) and client:DistanceFromCharacter(Enemy.HumanoidRootPart.Position) < self.Distance then
 				args[1] = Enemy:FindFirstChild("UpperTorso")
 			else
-				if client:DistanceFromCharacter(Enemy.HumanoidRootPart.Position) < self.Distance then
+				if Enemy:FindFirstChild("HumanoidRootPart",true) and client:DistanceFromCharacter(Enemy.HumanoidRootPart.Position) < self.Distance then
 					table.insert(args[2],{
 						[1] = Enemy,
 						[2] = Enemy:FindFirstChild("UpperTorso")
