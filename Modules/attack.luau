@@ -41,7 +41,7 @@ function Module.IsAlive(Char: Model?): boolean
 end
 
 local Settings = {
-	ClickDelay = 0.01,
+	ClickDelay = 0.125,
 	AutoClick = true
 }
 
@@ -107,7 +107,7 @@ Module.FastAttack = (function()
 
 	task.spawn(function()
 		while task.wait(Settings.ClickDelay or 0.125) do
-			if (tick() - Module.AttackCooldown) < 1 then continue end
+			if (tick() - Module.AttackCooldown) < 0.5 then continue end
 			if not Settings.AutoClick then continue end
 			if not Module.IsAlive(client.Character) then continue end
 			if not client.Character:FindFirstChildOfClass("Tool") then continue end
