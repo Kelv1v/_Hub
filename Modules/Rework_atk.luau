@@ -1,16 +1,3 @@
-
-
-
-
-
-
---[[ THANKS REDZ HUB FOR THAT SHIT ]]
-
-
-
-
-
-
 local environment, replicatedstorage, players, net, client, modulepath, characterfolder, enemyfolder do
 	environment = (getgenv or getrenv or getfenv)()
 	replicatedstorage = game:GetService("ReplicatedStorage")
@@ -104,7 +91,7 @@ Module.FastAttack = (function()
 		self:AttackNearest()
 		self.FirstAttack = false
 	end
-	
+
 	function module:True_Attack()
 		if (tick() - Module.AttackCooldown) < 0.4833333194255829 then return end
 		if not Module.IsAlive(client.Character) then return end
@@ -113,6 +100,17 @@ Module.FastAttack = (function()
 		self:AttackNearest()
 		self.FirstAttack = false
 	end
+
+	task.spawn(function()
+		while task.wait(Settings.ClickDelay or 0.125) do
+			if (tick() - Module.AttackCooldown) < 0.4833333194255829 then continue end
+			if not Settings.AutoClick then continue end
+			if not Module.IsAlive(client.Character) then continue end
+			if not client.Character:FindFirstChildOfClass("Tool") then continue end
+			Module.AttackCooldown = tick()
+			module:BladeHits()
+		end
+	end)
 
 	environment._trash_attack = module
 	return module
