@@ -115,3 +115,5 @@ Module.FastAttack = (function()
 	environment._trash_attack = module
 	return module
 end)()
+
+return Module
