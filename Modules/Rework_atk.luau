@@ -23,7 +23,7 @@ local environment, replicatedstorage, players, net, client, modulepath, characte
 end
 
 local Module = {}
-Module.AttackCooldown = tick()
+Module.AttackCooldown = 0
 local CachedChars = {}
 
 function Module.IsAlive(Char: Model?): boolean
