@@ -1,16 +1,3 @@
-
-
-
-
-
-
---[[ THANKS REDZ HUB FOR THAT SHIT ]]
-
-
-
-
-
-
 local environment, replicatedstorage, players, net, client, modulepath, characterfolder, enemyfolder do
 	environment = (getgenv or getrenv or getfenv)()
 	replicatedstorage = game:GetService("ReplicatedStorage")
