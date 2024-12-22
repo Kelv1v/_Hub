@@ -94,7 +94,7 @@ Module.FastAttack = (function()
 	end
 
 	function module:True_Attack()
-		if (tick() - Module.AttackCooldown) < 0.4833333194255829 then return end
+		if (tick() - Module.AttackCooldown) < 0.3 then return end
 		if not Module.IsAlive(client.Character) then return end
 		if not client.Character:FindFirstChildOfClass("Tool") then return end
 		Module.AttackCooldown = tick()
