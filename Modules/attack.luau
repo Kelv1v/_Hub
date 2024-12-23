@@ -45,7 +45,7 @@ local Settings = {
 	AutoClick = true
 }
 
-Module.FastAttack = (function(setting)
+Module.FastAttack = (function()
 	if environment._trash_attack then
 		return environment._trash_attack
 	end
@@ -110,7 +110,7 @@ Module.FastAttack = (function(setting)
 			if (tick() - Module.AttackCooldown) < 0.4833333194255829 then continue end
 			if not Settings.AutoClick then continue end
 			if not Module.IsAlive(client.Character) then continue end
-			if not setting then continue end
+			if not Usefastattack then continue end
 			if not client.Character:FindFirstChildOfClass("Tool") then continue end
 
 			module:BladeHits()
