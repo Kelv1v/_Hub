@@ -1,12 +1,3 @@
-local tbl_upvr = {}
-local ReplicatedStorage_upvr = game:GetService("ReplicatedStorage")
-local Net_upvr = require(ReplicatedStorage_upvr.Modules.Net)
-tbl_upvr.RegisterAttackEvent = Net_upvr:RemoteEvent("RegisterAttack")
-tbl_upvr.RegisterHitEvent = Net_upvr:RemoteEvent("RegisterHit")
-tbl_upvr.RegisterAttackEvent:FireServer(0.4)
-
-
-
 local environment, replicatedstorage, players, net, client, modulepath, characterfolder, enemyfolder do
 	environment = (getgenv or getrenv or getfenv)()
 	replicatedstorage = game:GetService("ReplicatedStorage")
