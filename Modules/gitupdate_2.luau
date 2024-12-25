@@ -1,3 +1,4 @@
+
 local environment, replicatedstorage, players, net, client, modulepath, characterfolder, enemyfolder do
 	environment = (getgenv or getrenv or getfenv)()
 	replicatedstorage = game:GetService("ReplicatedStorage")
@@ -9,9 +10,14 @@ local environment, replicatedstorage, players, net, client, modulepath, characte
 	enemyfolder = workspace:WaitForChild("Enemies")
 end
 
+local tbl_upvr = {}
 local Module = {}
 Module.AttackCooldown = tick()
 local CachedChars = {}
+
+local Net_upvr = require(net)
+tbl_upvr.RegisterAttackEvent = Net_upvr:RemoteEvent("RegisterAttack")
+tbl_upvr.RegisterHitEvent = Net_upvr:RemoteEvent("RegisterHit")
 
 function Module.IsAlive(Char: Model?): boolean
 	if not Char then
@@ -44,16 +50,13 @@ Module.FastAttack = (function()
 		attackPlayers = true
 	}
 
-	local RegisterAttack = net:WaitForChild("RE/RegisterAttack")
-	local RegisterHit = net:WaitForChild("RE/RegisterHit")
-
 	function module:AttackEnemy(EnemyHead,Table) 
 		if EnemyHead and client:DistanceFromCharacter(EnemyHead.Position) < self.Distance then
 			if not self.FirstAttack then
-				RegisterAttack:FireServer(Settings.ClickDelay or 0.125)
+				tbl_upvr.RegisterAttackEvent:RemoteEvent(Settings.ClickDelay or 0.125)
 				self.FirstAttack = true
 			end
-			RegisterHit:FireServer(EnemyHead, (Table) and Table or {})
+			tbl_upvr.RegisterHitEvent:RemoteEvent(EnemyHead, (Table) and Table or {})
 		end
 	end
 
